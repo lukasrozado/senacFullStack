@@ -8,6 +8,7 @@ function abrirUrna() {
         if (passwordPresidente == ask_password) {
             localStorage.setItem("iniciar_urna", true);
             alert("Urna aberta.");
+            window.location.href = "urna.html"; 
         } else {
             alert("Password Inválido");
         }
@@ -21,8 +22,9 @@ function fecharUrna() {
     if (userPresidente == ask_user) {
         var ask_password = prompt("Senha: ");
         if (passwordPresidente == ask_password) {
-            localStorage.setItem("iniciar_urna", false);  // Armazena estado no localStorage
+            localStorage.setItem("iniciar_urna", false); 
             alert("Urna fechada.");
+            gerarRelatorioFinal();  
         } else {
             alert("Password Inválido");
         }
@@ -34,9 +36,9 @@ function fecharUrna() {
 function main() {
     var iniciar = confirm("Deseja abrir a urna? Se sim, confirme. Caso queira fechar, cancele.");
     if (iniciar) {
-        abrirUrna();
+        abrirUrna();  
     } else {
-        fecharUrna();
+        fecharUrna(); 
     }
 }
 
